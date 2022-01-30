@@ -14,7 +14,12 @@ public class JavaBasicQuestions {
 
 		primeNo1(100);
 		fibonacci(30);
-		
+		palindrome("ABCDEDCBA");
+		palindrome("madamimadam");
+		palindrome("mal a y a lam");
+		palindrome("1342846");
+		palindromeNo(36876426);
+		palindromeNo(123454321);
 	}
 	
 	public static void primeNo1(int a) {
@@ -61,7 +66,62 @@ public class JavaBasicQuestions {
 
 	
 	
+	public static void palindrome(String val) {
+		
+		 String str = val, reverseStr = "";
+		    
+		    int strLength = str.length();
+
+		    for (int i = (strLength - 1); i >=0; --i) {
+		      reverseStr = reverseStr + str.charAt(i);
+		    }
+
+		    if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
+		      System.out.println(str + " is a Palindrome String.");
+		    }
+		    else {
+		      System.out.println(str + " is not a Palindrome String.");
+		    }	
+	}	
 	
+	public static void palindromeNo(int no) {
+		
+		
+		 int num = no, reversed = 0;
+		    
+		    System.out.println("Original Number: " + num);
+
+		    // run loop until num becomes 0
+		    while(num != 0) {
+		    
+		      // get last digit from num
+		      int digit = num % 10;
+		      reversed = reversed * 10 + digit;
+
+		      // remove the last digit from num
+		      num /= 10;
+		    }
+		    
+		 if(no==reversed) {
+			 System.out.println("Palindrome >>>> Reversed no: "+reversed+" is a palindrome");
+		 }
+		 else
+		 {
+			 System.out.println("Palindrome >>>> Reversed no. "+reversed+" is not a palindrome");
+		 }
+		 
+		 
+		    num=no;
+		    int dig=0;
+		    int newNo=0;
+		    while (num!=0) {
+		    	dig=num%10;
+		    	newNo= newNo *10 + dig;
+		    	num=num/10;		    	
+		    	}
+		    
+		    System.out.println("New reverser No: "+newNo+"");
+	}	
 	
 	
 }
