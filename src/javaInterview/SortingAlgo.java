@@ -11,8 +11,8 @@ public class SortingAlgo {
 		int intUnsortedArr[] = {23,1,14,56,82,32,55,68,99,1};
 		System.out.println("Unsoreted Array: "+Arrays.toString(intUnsortedArr));
 	//	bubblesort(intUnsortedArr);
-		
-		selectionSort(intUnsortedArr);
+		insertionsort(intUnsortedArr);
+	//	selectionSort(intUnsortedArr);
 	}
 	
 	
@@ -63,7 +63,7 @@ public class SortingAlgo {
 						  intIndex =j;
 						} 
 					  
-			  }
+			  	}
 		      temp=intArr[intIndex];
 			  intArr[intIndex]=intArr[i];
 			  intArr[i]=temp; 
@@ -75,5 +75,25 @@ public class SortingAlgo {
 		System.out.println(Arrays.toString(intArr));
 	}
 
+	
+	public static void insertionsort(int[] intCards)
+	{
+		int arrCards[]=intCards, i=0,j=0,current;
+		
+		for (i=0; i<arrCards.length;i++)
+		{
+			j=i-1;
+			current=arrCards[i];
+			while(j>=0 && arrCards[j]>=current)
+			{
+				arrCards[j+1]=arrCards[j];
+				j=j-1;
+				System.out.println("Sorted after interation No"+i+": "+Arrays.toString(arrCards));
+			}
+			arrCards[j+1]=current;
+		}
+		
+		
+	}
 
 }

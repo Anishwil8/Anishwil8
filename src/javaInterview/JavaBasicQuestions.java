@@ -12,7 +12,7 @@ public class JavaBasicQuestions {
 		//	WAP to find square root of numbers
 		//	WAP to add two matrices 
 
-		primeNo1(100);
+	    primeNo1(100);
 		fibonacci(30);
 		palindrome("ABCDEDCBA");
 		palindrome("madamimadam");
@@ -20,6 +20,7 @@ public class JavaBasicQuestions {
 		palindrome("1342846");
 		palindromeNo(36876426);
 		palindromeNo(123454321);
+		squareroot(100);
 	}
 	
 	public static void primeNo1(int a) {
@@ -120,8 +121,24 @@ public class JavaBasicQuestions {
 		    	num=num/10;		    	
 		    	}
 		    
-		    System.out.println("New reverser No: "+newNo+"");
+		    System.out.println("New reversed No: "+newNo+"");
 	}	
+	
+	public static void squareroot(int maxNo)
+	{
+		int mxNo = maxNo, i,j;
+		
+		for (i=1; i< mxNo; i++)
+			for (j=1;j<i;j++)
+			{
+				if(i/j==j && i%j==0)
+				{
+					System.out.println("No: "+j+" is the square root of No: "+i+" ");
+					break;
+				}
+			}
+		
+	}
 	
 	
 }
